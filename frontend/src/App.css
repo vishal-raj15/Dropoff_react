@@ -29,3 +29,26 @@ label {
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
+
+.letsee{
+
+  font-size:3rem;
+   text-align:center;
+    background-color:rgb(99, 168, 233);
+    
+  height:80px;
+  align-items:center ;
+  justify-content:center;
+  border-radius:50px;
+  width:50%;
+  margin:20px auto;
+  color: #f7f7f7;
+
+  
+}
+
+.letsee:hover{
+  background-color: rgb(166, 238, 240);
+  color: rgb(78, 87, 90);
+  cursor: pointer;
+}

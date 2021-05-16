@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import AuthService from "../services/auth.service";
+import Cmap from './cmap';
+import Options from './options';
 
 export default class Profile extends Component {
   constructor(props) {
@@ -49,6 +51,9 @@ export default class Profile extends Component {
           <strong>Email:</strong>{" "}
           {currentUser.email}
         </p>
+        <Options />
+
+        <div style={{ paddingTop:'20px'}}></div>
        
       </div>: null}
       </div>
