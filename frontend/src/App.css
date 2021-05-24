@@ -52,3 +52,18 @@ label {
   color: rgb(78, 87, 90);
   cursor: pointer;
 }
+
+.mapboxgl-popup-content {
+
+  width:400px;
+}
+
+.sty {
+
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  height:80px;
+  line-height: 80px;
+  
+}

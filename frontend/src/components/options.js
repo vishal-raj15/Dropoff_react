@@ -1,26 +1,31 @@
 import React, { Component } from 'react'
 
-import { NavLink } from "react-router-dom";
+import ReactDOM from 'react-dom';
+import { useHistory ,BrowserRouter ,withRouter} from "react-router-dom";
+import Viewrequest from './viewrequest';
+import Postrequest from './postrequest';
 
 
-export default class options extends Component {
-
-    constructor(props){
-		super(props);
-		this.state = {
-            flag:1,
-		}
-	}
-    render() {
+class Options extends Component{
+        render(){
         return (
 
                 <div>
-                <div className='letsee'> View Requests</div>
+                <div className='letsee' onClick= {() => this.props.history.push("/view")}> 
+                
+                        <div className='sty'> View Requests</div></div>
 
-                <div className='letsee'> Post Request</div>
+                <div className='letsee' onClick= {() => this.props.history.push("/post")}> 
+                
+                <div className='sty'> Post Requests</div></div> 
+           
+           
             </div>
+
          
             
-        )
-    }
+        )}
+      
 }
+
+export default withRouter(Options);

@@ -4,6 +4,8 @@ import AuthService from "../services/auth.service";
 import Cmap from './cmap';
 import Options from './options';
 
+import ReactDOM from 'react-dom';
+
 export default class Profile extends Component {
   constructor(props) {
     super(props);
@@ -38,15 +40,14 @@ export default class Profile extends Component {
             <strong>{currentUser.firstusername}</strong> Profile
           </h3>
         </header>
-        <p>
-          <strong>Token:</strong>{" "}
-          {currentUser.accessToken.substring(0, 20)} ...{" "}
-          {currentUser.accessToken.substr(currentUser.accessToken.length - 20)}
-        </p>
+
+       
         <p>
           <strong>Id:</strong>{" "}
           {currentUser.id}
         </p>
+
+
         <p>
           <strong>Email:</strong>{" "}
           {currentUser.email}
@@ -55,7 +56,7 @@ export default class Profile extends Component {
 
         <div style={{ paddingTop:'20px'}}></div>
        
-      </div>: null}
+      </div>: <></>}
       </div>
     );
   }

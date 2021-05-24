@@ -96,7 +96,7 @@ import 'mdbreact/dist/css/mdb.css';
 import 'semantic-ui-css/semantic.min.css'
 
 
-function Cmap() {
+function Getmarkers() {
 //   const myStorage = window.localStorage;
 //   const [currentUsername, setCurrentUsername] = useState(myStorage.getItem("user"));
 //   const [pins, setPins] = useState([]);
@@ -111,9 +111,9 @@ function Cmap() {
   const [contact , setContact] = useState(null);
 
   const [reward , setReward] = useState(null);
+  const [image, setImage] = useState(null);
 
   const [done, setDone] = useState(false);
-  const [image, setImage] = useState(null);
 
   const [viewport, setViewport] = useState({
     latitude: 31.7754,
@@ -136,13 +136,6 @@ function Cmap() {
 	
   };
 
-  const onImageChange = (event) => {
-    if (event.target.files && event.target.files[0]) {
-      let img = event.target.files[0];
-      setImage(URL.createObjectURL(img));
-    }
-  };
-
   const handleSubmit = (e) => {
       e.preventDefault();
 
@@ -155,7 +148,6 @@ function Cmap() {
 
       console.log(" latitude " ,newPlace.lat);
       console.log(" longitude ", newPlace.long);
-      console.log(" image ",image);
       
 
       const newMarker = {
@@ -163,10 +155,11 @@ function Cmap() {
         weight:weight,
         pickup:pickup,
         destination: dest,
+        reward:reward,
         contact: contact,
         lat: newPlace.lat,
         long: newPlace.long,
-        reward:reward,
+        image:image,
       };
 
       try {
@@ -284,11 +277,6 @@ function Cmap() {
 			className="form-control"
 			onChange={(e) => setReward(e.target.value)} />
         
-      <label htmlFor="defaultFormContactSubjectEx" className="grey-text">
-          Image
-        </label>
-      <input type="file" name="myImage"  onChange={onImageChange}  />
-    
         
 
 		<div className="text-center">
@@ -330,4 +318,4 @@ function Cmap() {
   );
 }
 
-export default Cmap;
+export default Getmarkers;
